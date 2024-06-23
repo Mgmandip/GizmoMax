@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="homepage.html">
+    <link rel="stylesheet" href="contacts.html">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://img.freepik.com/premium-photo/photo-collection-cuttingedge-wearables_1055425-76022.jpg?w=1060);
+            background-size: cover;
+        }
+
+        nav {
+            height: 50px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        nav .logo {
+            color: rgb(206, 89, 17);
+            font-size: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: rgb(206, 89, 17);
+            text-decoration: none;
+            line-height: 50px;
+        }
+
+        .menubox {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menubox span {
+            height: 2px;
+            width: 25px;
+            background: rgb(206, 89, 17);
+            margin-bottom: 4px;
+            border-radius: 5px;
+            display: block;
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+
+        input[type=checkbox]:checked + .menubox span:nth-child(1) {
+            transform: rotate(50deg) translate(5px, 5px);
+        }
+
+        input[type=checkbox]:checked + .menubox span:nth-child(2) {
+            opacity: 0;
+        }
+
+        input[type=checkbox]:checked + .menubox span:nth-child(3) {
+            transform: rotate(-50deg) translate(5px, -5px);
+        }
+
+        .booksection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 200px;
+        }
+
+        .book1 {
+            width: 220px;
+            height: 280px;
+            padding: 10px;
+            border: 1px solid rgb(0, 0, 0);
+            border-radius: 10px;
+            background: rgb(246, 138, 71);
+            box-shadow: 3px 2px 4px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .book1 img {
+            width: 180px;
+            height: 150px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            color: white;
+            background-color: black;
+            height: 30px;
+            width: 150px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .buttondiv {
+            display: flex;
+            justify-content: center;
+        }
+
+        p{
+            color: white;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 130px;
+        }
+
+        @media (max-width: 768px) {
+            .menubox {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: start;
+                width: 100%;
+                background-color: rgb(48, 47, 47);
+                position: absolute;
+                top: 50px;
+                left: 0;
+                padding: 10px 0;
+            }
+
+            input[type=checkbox]:checked ~ ul {
+                display: flex;
+            }
+
+            nav ul li {
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 100%;
+                text-align: left;
+                margin-left: 25px;
+            }
+
+            .slideshow-container {
+                max-width: 100%;
+                max-height: 300px;
+                margin: 20px 0;
+            }
+
+            .book1 {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 class="logo">GizmoMax</h1>
+        <input type="checkbox" id="menu-toggle">
+        <label class="menubox" for="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <ul>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="booksection">
+        <div class="book1" id="book1">
+            <img src="https://i.pinimg.com/564x/a0/70/fc/a070fc3e1b54cf1f8424fbff499c9232.jpg" id="img" alt="Book 1">
+            <div class="title">
+                <h3>Ram DDR4 Kingston</h3>
+            </div>
+            <div class="buttondiv">
+                <button class="button">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="book1" id="book2">
+            <img src="https://i.pinimg.com/564x/70/16/ea/7016ea5879b1bb92484d70b587c4bf97.jpg" id="img" alt="Book 2">
+            <div class="title">
+                <h3>Asus GeForce RTX 4070</h3>
+            </div>
+            <div class="buttondiv">
+                <button class="button">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="book1" id="book3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOXlnc8-p5Fudb5XvEThYcfIrzb0DcvE_7xQ&s" id="img" alt="Book 3">
+            <div class="title">
+                <h3>MSI AMD Ryzen 7000 Series</h3>
+            </div>
+            <div class="buttondiv">
+                <button class="button">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="book1" id="book4">
+            <img src="https://www.zdnet.com/a/img/resize/775a2b0eb9f6d76d0058d1639bd718fdfa08460d/2022/04/08/5cce68cf-0151-4a92-b09e-f1180d72755d/hyperx-cloud-alpha-wireless.jpg?auto=webp&width=1280" id="img" alt="Book 4">
+            <div class="title">
+                <h3>HyperX Cloud Alpha Wireless</h3>
+            </div>
+            <div class="buttondiv">
+                <button class="button">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="book1" id="book5">
+            <img src="https://assets2.razerzone.com/pages/basilisk-v3-4D578898E8144Le8da21dde32b7a9f5f/chroma-rgb.jpg" id="img" alt="Book 5">
+            <div class="title">
+                <h3>Razer Basilisk V3</h3>
+            </div>
+            <div class="buttondiv">
+                <button class="button">Buy Now</button>
+            </div>
+        </div>
+    </div> 
+
+    <footer>
+        <p>@2024 GizmoMax. All rights reserved.</p>
+    </footer>
+
+    <script>
+       
+    </script>
+
+</body>
+</html>
